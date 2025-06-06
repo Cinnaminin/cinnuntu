@@ -1,0 +1,39 @@
+// Cinnuntu Splash Script
+
+// Background gradient fallback
+Window.SetBackgroundTopColor(0.234, 0.43, 0.705);
+Window.SetBackgroundBottomColor(0.16, 0.25, 0.44);
+
+// Load and center background.png
+background.image = Image("background.png");
+background.sprite = Sprite(background.image);
+background.sprite.SetX(Window.GetX() + Window.GetWidth()/2 - background.image.GetWidth()/2);
+background.sprite.SetY(Window.GetY() + Window.GetHeight()/2 - background.image.GetHeight()/2);
+
+// Load and center logo.png
+logo.image = Image("special://logo");
+logo.sprite = Sprite(logo.image);
+logo.opacity_angle = 0;
+
+// Animate logo opacity
+fun refresh_callback ()
+{
+  logo.opacity_angle += ((2 * 3.14) / 50) * 0.5;
+  min_opacity = 0.3;
+  opacity = (Math.Cos(logo.opacity_angle) + 1) / 2;
+  opacity *= 1 - min_opacity;
+  opacity += min_opacity;
+
+  logo.sprite.SetX(Window.GetX() + Window.GetWidth()/2 - logo.image.GetWidth()/2);
+  logo.sprite.SetY(Window.GetY() + Window.GetHeight()/2 - logo.image.GetHeight()/2);
+  logo.sprite.SetOpacity(opacity);
+}
+
+Plymouth.SetRefreshFunction(refresh_callback);
+
+// Ensure logo fades in fully on quit
+fun quit_callback () {
+  logo.sprite.SetOpacity(1);
+}
+
+Plymouth.SetQuitFunction(quit_callback);

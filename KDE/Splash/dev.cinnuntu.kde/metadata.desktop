@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Cinnuntu KDE
+Comment=Cinnuntu KDE Splash
+X-KDE-PluginInfo-Author=Izzy Kelemari
+X-KDE-PluginInfo-Email=cinnuntu@gmail.com
+X-KDE-PluginInfo-Name=dev.cinnuntu.kde
+X-KDE-PluginInfo-Version=1.2
+X-KDE-PluginInfo-Website=https://cinnuntu.cinnaminin.dev/kde/splash
+X-KDE-ServiceTypes=Plasma/LookAndFeel

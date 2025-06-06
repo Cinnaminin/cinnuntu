@@ -1,0 +1,12 @@
+[Plymouth Theme]
+Name=Cinnuntu
+Description=Boot splash for Cinnuntu
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/cinnuntu-splash
+ScriptFile=/usr/share/plymouth/themes/cinnuntu-splash/cinnuntu-splash.script
+
+[images]
+Image=logo.png
+Image=background.png
